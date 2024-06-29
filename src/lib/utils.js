@@ -1,4 +1,10 @@
+import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 import mongoose from 'mongoose'
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
+}
 
 const DB = async () =>{
     try {
