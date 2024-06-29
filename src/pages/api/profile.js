@@ -1,15 +1,15 @@
-
 import { UpdateProfile } from '@/lib/action.js';
 import DB from '@/lib/dbConnect';
 
-export async function POST(req) {
-    await DB(); 
-    return UpdateProfile(req);
-}
-
-export async function GET() {
-    return new Response(JSON.stringify({ message: 'Method not allowed' }), {
-        status: 405,
-        headers: { 'Content-Type': 'application/json' },
-    });
+export default async function handler(req, res) {
+    if (req.method === 'POST') {
+        await DB();
+        const response = await UpdateProfile(req);
+        res.status(200).json(response);
+    } else if (req.method === 'GET') {
+        res.status(405).json({ message: 'Method not allowed' });
+    } else {
+        res.setHeader('Allow', ['POST', 'GET']);
+        res.status(405).send(`Method ${req.method} Not Allowed`);
+    }
 }
