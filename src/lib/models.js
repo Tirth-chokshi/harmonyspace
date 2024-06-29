@@ -133,7 +133,7 @@ const supportSessionSchema = new mongoose.Schema({
 
 // Create models if they don't already exist
 export const UserModel = mongoose.models.UserModel || mongoose.model('UserModel', userSchema);
-export const Community = mongoose.models.Community || mongoose.model('Community', communitySchema);
+export const CommunityModel = mongoose.models.CommunityModel || mongoose.model('CommunityModel', communitySchema);
 export const ForumPost = mongoose.models.ForumPost || mongoose.model('ForumPost', forumPostSchema);
 export const Resource = mongoose.models.Resource || mongoose.model('Resource', resourceSchema);
 export const Event = mongoose.models.Event || mongoose.model('Event', eventSchema);

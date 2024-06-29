@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="100" />
 </p>
@@ -5,7 +6,7 @@
     <h1 align="center">HARMONYSPACE</h1>
 </p>
 <p align="center">
-    <em>HTTP error 401 for prompt `slogan`</em>
+    <em>Cultivating human connections and promoting mental wellness in the digital age</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Tirth-chokshi/harmonyspace.git?style=flat&color=0080ff" alt="license">
@@ -45,13 +46,27 @@
 
 ## 📍 Overview
 
-HTTP error 401 for prompt `overview`
+Harmonyspace is a full-stack application focused on cultivating human connections and promoting mental wellness in the digital age. It provides a platform for users to connect, share experiences, and access mental wellness resources.
 
 ---
 
 ## 📦 Features
 
-HTTP error 401 for prompt `features`
+- **User Authentication and Profiles**
+  - User registration and login with email/password or social media.
+  - User profiles with customizable information like interests, goals, and preferred communication styles.
+- **Community Building**
+  - Creation of interest-based communities or groups.
+  - Discussion forums within communities for users to engage in conversations.
+- **Mental Wellness Resources**
+  - Curated collection of articles, videos, podcasts, and online courses related to mental health and well-being.
+  - Integration with mental health professionals for advice and guidance.
+- **Events and Workshops**
+  - Schedule and host virtual events, workshops, and webinars on mental wellness topics.
+  - Calendar integration for users to keep track of upcoming events.
+- **Support and Counseling**
+  - Access to online counseling sessions with licensed therapists or counselors.
+  - Peer support groups for users to connect and share experiences.
 
 ---
 
@@ -125,13 +140,13 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                   | Summary                                        |
 | ---                                                                                                    | ---                                            |
-| [jsconfig.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/jsconfig.json)           | HTTP error 401 for prompt `jsconfig.json`      |
-| [postcss.config.mjs](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/postcss.config.mjs) | HTTP error 401 for prompt `postcss.config.mjs` |
-| [components.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/components.json)       | HTTP error 401 for prompt `components.json`    |
-| [package.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/package.json)             | HTTP error 401 for prompt `package.json`       |
-| [next.config.mjs](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/next.config.mjs)       | HTTP error 401 for prompt `next.config.mjs`    |
-| [tailwind.config.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/tailwind.config.js) | HTTP error 401 for prompt `tailwind.config.js` |
-| [package-lock.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/package-lock.json)   | HTTP error 401 for prompt `package-lock.json`  |
+| [jsconfig.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/jsconfig.json)           | Configuration for JavaScript project structure |
+| [postcss.config.mjs](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/postcss.config.mjs) | Configuration for PostCSS                      |
+| [components.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/components.json)       | Component definitions                          |
+| [package.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/package.json)             | Project dependencies and scripts               |
+| [next.config.mjs](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/next.config.mjs)       | Next.js configuration                          |
+| [tailwind.config.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/tailwind.config.js) | Tailwind CSS configuration                     |
+| [package-lock.json](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/package-lock.json)   | Lockfile for npm dependencies                  |
 
 </details>
 
@@ -139,10 +154,10 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                         | Summary                                                  |
 | ---                                                                                                          | ---                                                      |
-| [communities.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/communities.js) | HTTP error 401 for prompt `src/pages/api/communities.js` |
-| [register.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/register.js)       | HTTP error 401 for prompt `src/pages/api/register.js`    |
-| [login.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/login.js)             | HTTP error 401 for prompt `src/pages/api/login.js`       |
-| [profile.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/profile.js)         | HTTP error 401 for prompt `src/pages/api/profile.js`     |
+| [communities.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/communities.js) | API for managing communities                             |
+| [register.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/register.js)       | API for user registration                                |
+| [login.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/login.js)             | API for user login                                       |
+| [profile.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/pages/api/profile.js)         | API for user profile management                          |
 
 </details>
 
@@ -150,10 +165,10 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                                | Summary                                                      |
 | ---                                                                                                                 | ---                                                          |
-| [ModeToggle.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ModeToggle.js)         | HTTP error 401 for prompt `src/components/ModeToggle.js`     |
-| [DesktopNav.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/DesktopNav.js)         | HTTP error 401 for prompt `src/components/DesktopNav.js`     |
-| [theme-provider.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/theme-provider.js) | HTTP error 401 for prompt `src/components/theme-provider.js` |
-| [NavLinks.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/NavLinks.js)             | HTTP error 401 for prompt `src/components/NavLinks.js`       |
+| [ModeToggle.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ModeToggle.js)         | Component for toggling between light and dark modes          |
+| [DesktopNav.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/DesktopNav.js)         | Component for desktop navigation                             |
+| [theme-provider.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/theme-provider.js) | Theme provider component                                     |
+| [NavLinks.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/NavLinks.js)             | Component for navigation links                               |
 
 </details>
 
@@ -161,14 +176,14 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                                       | Summary                                                           |
 | ---                                                                                                                        | ---                                                               |
-| [label.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/label.jsx)                     | HTTP error 401 for prompt `src/components/ui/label.jsx`           |
-| [tabs.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/tabs.jsx)                       | HTTP error 401 for prompt `src/components/ui/tabs.jsx`            |
-| [input.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/input.jsx)                     | HTTP error 401 for prompt `src/components/ui/input.jsx`           |
-| [sonner.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/sonner.jsx)                   | HTTP error 401 for prompt `src/components/ui/sonner.jsx`          |
-| [card.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/card.jsx)                       | HTTP error 401 for prompt `src/components/ui/card.jsx`            |
-| [dropdown-menu.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/dropdown-menu.jsx)     | HTTP error 401 for prompt `src/components/ui/dropdown-menu.jsx`   |
-| [navigation-menu.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/navigation-menu.jsx) | HTTP error 401 for prompt `src/components/ui/navigation-menu.jsx` |
-| [button.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/button.jsx)                   | HTTP error 401 for prompt `src/components/ui/button.jsx`          |
+| [label.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/label.jsx)                     | UI component for labels                                           |
+| [tabs.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/tabs.jsx)                       | UI component for tabs                                             |
+| [input.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/input.jsx)                     | UI component for input fields                                     |
+| [sonner.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/sonner.jsx)                   | UI component for notifications                                    |
+| [card.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/card.jsx)                       | UI component for cards                                            |
+| [dropdown-menu.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/dropdown-menu.jsx)     | UI component for dropdown menus                                   |
+| [navigation-menu.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/navigation-menu.jsx) | UI component for navigation menus                                 |
+| [button.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/components/ui/button.jsx)                   | UI component for buttons                                          |
 
 </details>
 
@@ -176,10 +191,10 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                               | Summary                                          |
 | ---                                                                                                | ---                                              |
-| [models.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/models.js)       | HTTP error 401 for prompt `src/lib/models.js`    |
-| [utils.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/utils.js)         | HTTP error 401 for prompt `src/lib/utils.js`     |
-| [dbConnect.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/dbConnect.js) | HTTP error 401 for prompt `src/lib/dbConnect.js` |
-| [action.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/action.js)       | HTTP error 401 for prompt `src/lib/action.js`    |
+| [models.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/models.js)       | Database models                                  |
+| [utils.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/utils.js)         | Utility functions                                |
+| [dbConnect.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/dbConnect.js) | Database connection setup                        |
+| [action.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/lib/action.js)       | Action handlers                                  |
 
 </details>
 
@@ -187,9 +202,9 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                             | Summary                                         |
 | ---                                                                                              | ---                                             |
-| [layout.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/layout.js)     | HTTP error 401 for prompt `src/app/layout.js`   |
-| [page.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/page.js)         | HTTP error 401 for prompt `src/app/page.js`     |
-| [globals.css](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/globals.css) | HTTP error 401 for prompt `src/app/globals.css` |
+| [layout.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/layout.js)     | Layout component                                |
+| [page.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/page.js)         | Main page component                             |
+| [globals.css](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/globals.css) | Global CSS styles                               |
 
 </details>
 
@@ -197,7 +212,7 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                          | Summary                                          |
 | ---                                                                                           | ---                                              |
-| [page.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/home/page.js) | HTTP error 401 for prompt `src/app/home/page.js` |
+| [page.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/home/page.js) | Home page component                              |
 
 </details>
 
@@ -205,7 +220,7 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                 | Summary                                                |
 | ---                                                                                                  | ---                                                    |
-| [page.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/dashboard/page.jsx) | HTTP error 401 for prompt `src/app/dashboard/page.jsx` |
+| [page.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/dashboard/page.jsx) | Dashboard page component                               |
 
 </details>
 
@@ -213,7 +228,7 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                               | Summary                                              |
 | ---                                                                                                | ---                                                  |
-| [page.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/profile/page.jsx) | HTTP error 401 for prompt `src/app/profile/page.jsx` |
+| [page.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/profile/page.jsx) | Profile page component                               |
 
 </details>
 
@@ -221,7 +236,7 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                            | Summary                                                           |
 | ---                                                                                                             | ---                                                               |
-| [route.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/api/auth/[kindeAuth]/route.js) | HTTP error 401 for prompt `src/app/api/auth/[kindeAuth]/route.js` |
+| [route.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/api/auth/[kindeAuth]/route.js) | Authentication route handler                                      |
 
 </details>
 
@@ -229,7 +244,7 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                | Summary                                               |
 | ---                                                                                                 | ---                                                   |
-| [page.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/auth/log/page.jsx) | HTTP error 401 for prompt `src/app/auth/log/page.jsx` |
+| [page.jsx](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/auth/log/page.jsx) | Login page component                                  |
 
 </details>
 
@@ -237,7 +252,7 @@ HTTP error 401 for prompt `features`
 
 | File                                                                                                | Summary                                                |
 | ---                                                                                                 | ---                                                    |
-| [page.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/desktopNav/page.js) | HTTP error 401 for prompt `src/app/desktopNav/page.js` |
+| [page.js](https://github.com/Tirth-chokshi/harmonyspace.git/blob/master/src/app/desktopNav/page.js) | Desktop navigation page component                      |
 
 </details>
 
@@ -249,7 +264,9 @@ HTTP error 401 for prompt `features`
 
 Ensure you have the following dependencies installed on your system:
 
-* **JavaScript**: `version x.y.z`
+* **JavaScript**: version x.y.z
+* **Node.js**: version x.y.z
+* **MongoDB**: version x.y.z
 
 ### ⚙️ Installation
 
@@ -276,8 +293,10 @@ npm install
 Use the following command to run harmonyspace:
 
 ```sh
-node app.js
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### 🧪 Tests
 
@@ -291,9 +310,11 @@ npm test
 
 ## 🛠 Project Roadmap
 
-- [X] `► INSERT-TASK-1`
-- [ ] `► INSERT-TASK-2`
-- [ ] `► ...`
+- [X] Implement user authentication and profiles
+- [ ] Develop community building features
+- [ ] Integrate mental wellness resources
+- [ ] Schedule and host virtual events
+- [ ] Provide support and counseling services
 
 ---
 
@@ -336,7 +357,7 @@ Once your PR is reviewed and approved, it will be merged into the main branch.
 
 ## 📄 License
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+This project is protected under the [MIT License](https://choosealicense.com/licenses/mit/). For more details, refer to the [LICENSE](https://choosealicense.com/licenses/mit/) file.
 
 ---
 
@@ -348,8 +369,7 @@ This project is protected under the [SELECT-A-LICENSE](https://choosealicense.co
 
 ---
 
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -369,19 +389,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project uses [next/font](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Learn Next.js](https://nextjs
