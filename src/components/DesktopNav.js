@@ -1,7 +1,7 @@
 "use client"
-import { ModeToggle } from "@/components/ModeToggle";
 import NavLinks from "./NavLinks";
 import Image from 'next/image'
+import NavBtn from "./NavBtn";
 
 
 export default function DesktopNav() {
@@ -12,7 +12,7 @@ export default function DesktopNav() {
         <Image src="/harmony_logo.png" width={200} height={20} alt="site-logo" />
         </div>
         <div className="links"><NavLinks/></div>
-        <div className="buttons"><ModeToggle /></div>
+        <div className="buttons"><NavBtn/></div>
     </div>
     </>
     );

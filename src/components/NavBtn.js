@@ -10,41 +10,33 @@ import {
   } from "@/components/ui/navigation-menu"
   import * as React from "react"
   import Link from "next/link"
+  import { ModeToggle } from "@/components/ModeToggle";
+  import { Button } from "@/components/ui/button"
+
   
-  export default function NavLinks () {
+  export default function NavBtn () {
     return (
         <>
         <NavigationMenu>
   <NavigationMenuList>
 
-    <NavigationMenuItem className="desktop-nav-link">
-    <Link href="/home" legacyBehavior passHref>
-    <NavigationMenuLink>
-      HOME
-    </NavigationMenuLink>
-  </Link>
-  </NavigationMenuItem>
-  <NavigationMenuItem className="desktop-nav-link">
+    <NavigationMenuItem className="desktop-nav-btn">
     <Link href="/auth/log" legacyBehavior passHref>
     <NavigationMenuLink>
-      LOG
+    <Button variant="secondary">Login</Button>
     </NavigationMenuLink>
   </Link>
   </NavigationMenuItem>
-  <NavigationMenuItem className="desktop-nav-link">
-    <Link href="/about" legacyBehavior passHref>
+  <NavigationMenuItem className="desktop-nav-btn">
+    <Link href="/auth/log" legacyBehavior passHref>
     <NavigationMenuLink>
-      ABOUT
+    <Button variant="secondary">Register</Button>
     </NavigationMenuLink>
   </Link>
   </NavigationMenuItem>
 
-  <NavigationMenuItem className="desktop-nav-link">
-    <Link href="/profile" legacyBehavior passHref>
-    <NavigationMenuLink>
-      PROFILE
-    </NavigationMenuLink>
-  </Link>
+  <NavigationMenuItem className="desktop-nav-btn">
+        <ModeToggle/>
   </NavigationMenuItem>
 
   </NavigationMenuList>
