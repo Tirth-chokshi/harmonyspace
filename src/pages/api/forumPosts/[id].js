@@ -1,5 +1,5 @@
 import dbConnect from '@/lib/dbConnect';
-import ForumPost from '@/pages/api/forumPosts/create.js';
+import { ForumPost } from '@/lib/models';
 
 export default async function handler(req, res) {
   const { method } = req;

@@ -1,6 +1,7 @@
 // src/lib/action.js
 
 import { UserModel } from './models.js';
+import { CommunityModel } from './models.js';
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
 
@@ -116,23 +117,17 @@ export const UpdateProfile = async (req, res) => {
     }
 };
 
-export const CreateCommunity = async (req) => {
+export const CreateCommunity = async (req, res) => {
     try {
-        const { name, description, creatorId } = await req.json();
+        const { name, description, creatorId } = req.body;
 
         if (!name || !creatorId) {
-            return new Response(JSON.stringify({ success: false, message: "Name and creator ID are required" }), {
-                status: 400,
-                headers: { 'Content-Type': 'application/json' },
-            });
+            return res.status(400).json({ success: false, message: "Name and creator ID are required" });
         }
 
         const creator = await UserModel.findById(creatorId);
         if (!creator) {
-            return new Response(JSON.stringify({ success: false, message: "Creator not found" }), {
-                status: 404,
-                headers: { 'Content-Type': 'application/json' },
-            });
+            return res.status(404).json({ success: false, message: "Creator not found" });
         }
 
         const newCommunity = new CommunityModel({
@@ -144,33 +139,23 @@ export const CreateCommunity = async (req) => {
 
         await newCommunity.save();
 
-        return new Response(JSON.stringify({ success: true, message: "Community created successfully", community: newCommunity }), {
-            status: 201,
-            headers: { 'Content-Type': 'application/json' },
-        });
+        return res.status(201).json({ success: true, message: "Community created successfully", community: newCommunity });
     } catch (error) {
         console.error(error);
-        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-        });
+        return res.status(500).json({ success: false, message: "Internal server error" });
     }
 };
 
-export const GetCommunities = async () => {
-    try {
-        const communities = await CommunityModel.find().populate('creator', 'name email');
 
-        return new Response(JSON.stringify({ success: true, communities }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' },
-        });
+export const GetCommunities = async (req, res) => {
+    try {
+        const communities = await Community.find({});
+        if (communities.length === 0) {
+            return res.status(404).json({ success: false, message: 'No communities found' });
+        }
+        return res.status(200).json({ success: true, communities });
     } catch (error) {
-        console.error(error);
-        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-        });
+        return res.status(500).json({ success: false, message: 'Error fetching communities' });
     }
 };
 
