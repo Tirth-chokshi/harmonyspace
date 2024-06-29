@@ -1,3 +1,5 @@
+// src/lib/action.js
+
 import { UserModel } from './models.js';
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
@@ -67,5 +69,149 @@ export const Logout = async (req, res) => {
     } catch (error) {
         res.status(500).json({ success: false, message: "Internal server error" });
         console.log(error);
+    }
+};
+
+export const UpdateProfile = async (req, res) => {
+    try {
+        const { email, name, interests, goals, communicationStyle, bio } = await req.json();
+
+        // Check if email is provided
+        if (!email) {
+            return new Response(JSON.stringify({ success: false, message: "Email is required" }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        // Find the user by email
+        const user = await UserModel.findOne({ email });
+        if (!user) {
+            return new Response(JSON.stringify({ success: false, message: "User not found" }), {
+                status: 404,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        // Update user fields
+        if (name) user.name = name;
+        if (interests) user.interests = interests;
+        if (goals) user.goals = goals;
+        if (communicationStyle) user.communicationStyle = communicationStyle;
+        if (bio) user.bio = bio;
+
+        // Save the updated user
+        await user.save();
+
+        return new Response(JSON.stringify({ success: true, message: "Profile updated successfully", user }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error(error);
+        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    }
+};
+
+export const CreateCommunity = async (req) => {
+    try {
+        const { name, description, creatorId } = await req.json();
+
+        if (!name || !creatorId) {
+            return new Response(JSON.stringify({ success: false, message: "Name and creator ID are required" }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        const creator = await UserModel.findById(creatorId);
+        if (!creator) {
+            return new Response(JSON.stringify({ success: false, message: "Creator not found" }), {
+                status: 404,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        const newCommunity = new CommunityModel({
+            name,
+            description,
+            creator: creatorId,
+            members: [creatorId]
+        });
+
+        await newCommunity.save();
+
+        return new Response(JSON.stringify({ success: true, message: "Community created successfully", community: newCommunity }), {
+            status: 201,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error(error);
+        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    }
+};
+
+export const GetCommunities = async () => {
+    try {
+        const communities = await CommunityModel.find().populate('creator', 'name email');
+
+        return new Response(JSON.stringify({ success: true, communities }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error(error);
+        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    }
+};
+
+export const JoinCommunity = async (req) => {
+    try {
+        const { communityId, userId } = await req.json();
+
+        if (!communityId || !userId) {
+            return new Response(JSON.stringify({ success: false, message: "Community ID and user ID are required" }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        const community = await CommunityModel.findById(communityId);
+        if (!community) {
+            return new Response(JSON.stringify({ success: false, message: "Community not found" }), {
+                status: 404,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        if (community.members.includes(userId)) {
+            return new Response(JSON.stringify({ success: false, message: "User is already a member of this community" }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' },
+            });
+        }
+
+        community.members.push(userId);
+        await community.save();
+
+        return new Response(JSON.stringify({ success: true, message: "Joined community successfully" }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error(error);
+        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        });
     }
 };
