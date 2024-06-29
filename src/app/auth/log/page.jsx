@@ -22,8 +22,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import { Toaster, toast } from 'sonner'
-import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
-
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -151,8 +149,6 @@ export default function SignUpPage() {
           </TabsContent>
         </Tabs>
         <Toaster />
-        <LoginLink>Sign in</LoginLink>
-        <RegisterLink>Sign up</RegisterLink>
       </div>
     </div>
   );
