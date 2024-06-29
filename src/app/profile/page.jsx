@@ -1,8 +1,8 @@
-
+"use client"
 
 export const updateProfile = async (userData) => {
     try {
-        const response = await fetch('/api/profile/update', {
+        const response = await fetch('/api/profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

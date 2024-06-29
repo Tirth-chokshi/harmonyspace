@@ -14,9 +14,6 @@ export async function GET() {
 
 // src/app/api/communities/join/route.js
 
-import { JoinCommunity } from '@/lib/action.js';
-import DB from '@/lib/dbConnect';
-
 export async function POST(req) {
     await DB();
     return JoinCommunity(req);

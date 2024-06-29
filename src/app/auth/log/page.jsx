@@ -22,6 +22,8 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import { Toaster, toast } from 'sonner'
+import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
+
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -60,96 +62,98 @@ export default function SignUpPage() {
     }
   };
 
-// /////////////////////Login function ////////////////////////
-const handleSubmitLogin = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
+  // /////////////////////Login function ////////////////////////
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
 
-    const data = await response.json();
-    if (data.success) {
-      alert('User Login successfully');
-    } else {
-      alert(data.message);
+      const data = await response.json();
+      if (data.success) {
+        alert('User Login successfully');
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
     }
-  } catch (error) {
-    console.error('Error:', error);
-    alert('An error occurred. Please try again.');
-  }
-};
+  };
 
   return (
     <div className='log-container'>
 
-<div className="LogCompo_center">
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Login</TabsTrigger>
-        <TabsTrigger value="password">Register</TabsTrigger>
-      </TabsList>
-      <TabsContent value="account">
-      <form onSubmit={handleSubmitLogin}>
-        <Card>
-          <CardHeader>
-            <CardTitle>Login</CardTitle>
-            <CardDescription>
-              Login to your account here. Click continue when you&apos;re done.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="Please enter your email" name="email" value={formData.email} onChange={handleChange} />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" placeholder="Please enter your password" name="password" value={formData.password} onChange={handleChange} />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Continue</Button>
-          </CardFooter>
-        </Card>
-        </form>
-      </TabsContent>
-      <TabsContent value="password">
-      <form onSubmit={handleSubmitRegister}>
-        <Card>
-          <CardHeader>
-            <CardTitle>Register</CardTitle>
-            <CardDescription>
-              Register here. After saving, you&apos;ll be logged in!.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Please enter your name" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Please enter your email" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Please enter your password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Continue</Button>
-          </CardFooter>
-        </Card>
-        </form>
-      </TabsContent>
-    </Tabs>
-    <Toaster />
-    </div>
+      <div className="LogCompo_center">
+        <Tabs defaultValue="account" className="w-[400px]">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="account">Login</TabsTrigger>
+            <TabsTrigger value="password">Register</TabsTrigger>
+          </TabsList>
+          <TabsContent value="account">
+            <form onSubmit={handleSubmitLogin}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Login</CardTitle>
+                  <CardDescription>
+                    Login to your account here. Click continue when you&apos;re done.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" placeholder="Please enter your email" name="email" value={formData.email} onChange={handleChange} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="password">Password</Label>
+                    <Input id="password" placeholder="Please enter your password" name="password" value={formData.password} onChange={handleChange} />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button>Continue</Button>
+                </CardFooter>
+              </Card>
+            </form>
+          </TabsContent>
+          <TabsContent value="password">
+            <form onSubmit={handleSubmitRegister}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Register</CardTitle>
+                  <CardDescription>
+                    Register here. After saving, you&apos;ll be logged in!.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Please enter your name" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Please enter your email" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="password">Password</Label>
+                    <Input id="password" type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Please enter your password" />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button>Continue</Button>
+                </CardFooter>
+              </Card>
+            </form>
+          </TabsContent>
+        </Tabs>
+        <Toaster />
+        <LoginLink>Sign in</LoginLink>
+        <RegisterLink>Sign up</RegisterLink>
+      </div>
     </div>
   );
 }
