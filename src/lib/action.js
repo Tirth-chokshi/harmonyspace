@@ -75,23 +75,17 @@ export const Logout = async (req, res) => {
 
 export const UpdateProfile = async (req, res) => {
     try {
-        const { email, name, interests, goals, communicationStyle, bio } = await req.json();
+        const { email, name, interests, goals, communicationStyle, bio } = req.body;
 
         // Check if email is provided
         if (!email) {
-            return new Response(JSON.stringify({ success: false, message: "Email is required" }), {
-                status: 400,
-                headers: { 'Content-Type': 'application/json' },
-            });
+            return res.status(400).json({ success: false, message: "Email is required" });
         }
 
         // Find the user by email
         const user = await UserModel.findOne({ email });
         if (!user) {
-            return new Response(JSON.stringify({ success: false, message: "User not found" }), {
-                status: 404,
-                headers: { 'Content-Type': 'application/json' },
-            });
+            return res.status(404).json({ success: false, message: "User not found" });
         }
 
         // Update user fields
@@ -104,18 +98,13 @@ export const UpdateProfile = async (req, res) => {
         // Save the updated user
         await user.save();
 
-        return new Response(JSON.stringify({ success: true, message: "Profile updated successfully", user }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' },
-        });
+        return res.status(200).json({ success: true, message: "Profile updated successfully", user });
     } catch (error) {
         console.error(error);
-        return new Response(JSON.stringify({ success: false, message: "Internal server error" }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-        });
+        return res.status(500).json({ success: false, message: "Internal server error" });
     }
 };
+
 
 export const CreateCommunity = async (req, res) => {
     try {
