@@ -40,7 +40,7 @@ export default function SignUpPage() {
   const handleSubmitRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -83,9 +83,6 @@ const handleSubmitLogin = async (e) => {
     alert('An error occurred. Please try again.');
   }
 };
-
-
-
 
   return (
     <div className='log-container'>
