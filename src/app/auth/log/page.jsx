@@ -60,8 +60,35 @@ export default function SignUpPage() {
     }
   };
 
+// /////////////////////Login function ////////////////////////
+const handleSubmitLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      alert('User Login successfully');
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+  }
+};
+
+
+
+
   return (
-    <div>
+    <div className='log-container'>
 
 <div className="LogCompo_center">
     <Tabs defaultValue="account" className="w-[400px]">
@@ -70,7 +97,7 @@ export default function SignUpPage() {
         <TabsTrigger value="password">Register</TabsTrigger>
       </TabsList>
       <TabsContent value="account">
-      <form onSubmit={handleSubmitRegister}>
+      <form onSubmit={handleSubmitLogin}>
         <Card>
           <CardHeader>
             <CardTitle>Login</CardTitle>
