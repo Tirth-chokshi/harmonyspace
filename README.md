@@ -1,6 +1,4 @@
-Sure, let's enhance the README file according to the problem statement and the specified tech stack (Next.js 14, MongoDB, Shadcn-UI). Here's the updated README:
 
-```markdown
 <p align="center">
   <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="100" />
 </p>
