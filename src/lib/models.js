@@ -131,13 +131,10 @@ const supportSessionSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-// Create models
-const User = mongoose.model('User', userSchema);
-const Community = mongoose.model('Community', communitySchema);
-const ForumPost = mongoose.model('ForumPost', forumPostSchema);
-const Resource = mongoose.model('Resource', resourceSchema);
-const Event = mongoose.model('Event', eventSchema);
-const SupportSession = mongoose.model('SupportSession', supportSessionSchema);
-
-// Export models
-export { User, Community, ForumPost, Resource, Event, SupportSession };
+// Create models if they don't already exist
+export const UserModel = mongoose.models.UserModel || mongoose.model('UserModel', userSchema);
+export const Community = mongoose.models.Community || mongoose.model('Community', communitySchema);
+export const ForumPost = mongoose.models.ForumPost || mongoose.model('ForumPost', forumPostSchema);
+export const Resource = mongoose.models.Resource || mongoose.model('Resource', resourceSchema);
+export const Event = mongoose.models.Event || mongoose.model('Event', eventSchema);
+export const SupportSession = mongoose.models.SupportSession || mongoose.model('SupportSession', supportSessionSchema);
