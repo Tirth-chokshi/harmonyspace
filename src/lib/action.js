@@ -108,22 +108,14 @@ export const UpdateProfile = async (req, res) => {
 
 export const CreateCommunity = async (req, res) => {
     try {
-        const { name, description, creatorId } = req.body;
-
-        if (!name || !creatorId) {
+        const { name, description } = req.body;
+        if (!name) {
             return res.status(400).json({ success: false, message: "Name and creator ID are required" });
-        }
-
-        const creator = await UserModel.findById(creatorId);
-        if (!creator) {
-            return res.status(404).json({ success: false, message: "Creator not found" });
         }
 
         const newCommunity = new CommunityModel({
             name,
             description,
-            creator: creatorId,
-            members: [creatorId]
         });
 
         await newCommunity.save();

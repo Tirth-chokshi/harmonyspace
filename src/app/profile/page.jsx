@@ -67,7 +67,7 @@ export default function Profile() {
           ))}
         </ul>
         <Command className="rounded-lg border shadow-md profile-edit-container">
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="Type your intrest or search..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Interests">

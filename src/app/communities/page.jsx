@@ -1,7 +1,5 @@
-// pages/index.jsx
 import CreateCommunityForm from "@/components/ui/CreateCommunityForm";
 import CommunityList from "@/components/ui/CommunityList";
-
 
 const Home = () => {
     return (
