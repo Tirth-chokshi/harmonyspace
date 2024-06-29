@@ -75,8 +75,8 @@ export const Logout = async (req, res) => {
 
 export const UpdateProfile = async (req, res) => {
     try {
-        const { email, name, interests, goals, communicationStyle, bio } = req.body;
-
+        const { name, interests, goals, communicationStyle, bio } = req.body;
+        const email = 'test2@gmail.com'
         // Check if email is provided
         if (!email) {
             return res.status(400).json({ success: false, message: "Email is required" });

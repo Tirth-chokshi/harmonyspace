@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     await DB();
 
     if (req.method === 'GET') {
-        const email = req.body;
+        const email = 'test@gmail.com';
         if (!email) {
             return res.status(401).json({ success: false, message: "Unauthorized" });
         }

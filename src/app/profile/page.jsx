@@ -17,7 +17,6 @@ import { Button } from "@/components/ui/button";
 
 export default function Profile() {
   const [items, setItems] = useState([]);
-  const [email, setEmail] = useState(''); // Add state for email
 
   const handleSpanClick = (value) => {
     if (!items.includes(value)) {
@@ -33,7 +32,7 @@ export default function Profile() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, interests: items }) // Include email in the request body
+        body: JSON.stringify({ interests: items }) // Ensure the correct structure of the request body
       });
 
       const data = await response.json();
@@ -55,15 +54,6 @@ export default function Profile() {
           Please choose your <span className="text-blue-500">interests,</span>
           <span className="text-green-500">goals,</span> etc.
         </h1>
-
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)} // Update email state on change
-          placeholder="Email"
-          required
-          className="profile-email-input"
-        />
 
         <ul className="profile-intrests-items">
           {items.map((item, index) => (
